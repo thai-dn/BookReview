@@ -1,13 +1,21 @@
 class BooksController < ApplicationController
   before_action :find_book, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
+  before_action :set_book_category, only: [:index]
   
+  def search
+    @books = Book.ransack(title_or_description_cont: params[:q]).result(distinct: true)
+    
+    respond_to do |format|
+      format.js # actually means: if the client ask for js -> return file.js
+    end
+  end
+
   def index
-    if params[:category].blank?
-      @books = Book.all.order("created_at DESC")
+    if @category.nil?
+      @books = Book.all.order(created_at: :desc)
     else
-      @category_id = Category.find_by_name(params[:category]).id
-      @books = Book.where(category_id: @category_id).order("created_at DESC")
+      @books = Book.where(category_id: @category).order(created_at: :desc)
     end
   end
 
@@ -68,5 +76,7 @@ class BooksController < ApplicationController
     @book = Book.find(params['id'])
   end
 
-
+  def set_book_category
+    @category = Category.find_by(name: params[:category])
+  end
 end
