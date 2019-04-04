@@ -31,7 +31,7 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book = current_user.books.build
+    @book = Book.new
     @categories = Category.all.map{ |c| [c.name, c.id] }  
   end
 
@@ -68,7 +68,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :description, :author, :category_id, :book_img)  
+    params.require(:book).permit(:title, :description, :author, :category_id, :book_img, tags_attributes: [:id, :name, :description, :_destroy])  
   end
 
   def find_book

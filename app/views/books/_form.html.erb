@@ -3,5 +3,18 @@
   <%= f.input :title, label: "Book Title" %>
   <%= f.input :description %>
   <%= f.input :author %>
+
+  <h3>Tasks</h3>
+  <div id='tags'>
+    <% @book.tags.build %>
+    <%= f.fields_for :tags do |tag| %>
+      <%= render 'tag_fields', :f => tag %>
+    <% end %>
+
+    <div class="links">
+      <%= link_to_add_association 'add tags', f, :tags %>
+    </div>
+  </div>
+
   <%= f.button :submit %>
 <% end %>
