@@ -10,3 +10,4 @@ class Book < ApplicationRecord
   validates_attachment_content_type :book_img, content_type: /\Aimage\/.*\z/
 
 end
+123456
