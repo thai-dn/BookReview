@@ -18,6 +18,7 @@ gem 'devise', '~> 4.6', '>= 4.6.2'
 gem "paperclip", "~> 6.0.0"
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem "cocoon"
+gem 'pg'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -37,5 +38,5 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'mysql2'
+# gem 'mysql2'
 gem 'awesome_print'
