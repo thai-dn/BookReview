@@ -1,10 +1,11 @@
 <%= simple_form_for @book, html: { multipart: true } do |f| %>
   <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select  category") %>
+  <%= f.file_field :book_img %>
   <%= f.input :title, label: "Book Title" %>
-  <%= f.input :description %>
   <%= f.input :author %>
+  <%= f.input :description %>
 
-  <h3>Tasks</h3>
+  <h3>Tags</h3>
   <div id='tags'>
     <% @book.tags.build %>
     <%= f.fields_for :tags do |tag| %>
@@ -12,9 +13,9 @@
     <% end %>
 
     <div class="links">
-      <%= link_to_add_association 'add tags', f, :tags %>
+      <%= link_to_add_association 'add tags', f, :tags, class: "btn btn-custom" %>
     </div>
   </div>
 
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn-custom2" %>
 <% end %>

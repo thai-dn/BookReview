@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   before_action :find_book, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_book_category, only: [:index]
+  before_action :set_book_category, only: [:index, :show]
   
   def search
     @books = Book.ransack(title_or_description_cont: params[:q]).result(distinct: true)
