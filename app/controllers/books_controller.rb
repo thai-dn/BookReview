@@ -20,10 +20,10 @@ class BooksController < ApplicationController
   end
 
   def show
-    if @book.reviews.blank?
-      @average_review = 0
+    if @book.reviews.present?
+      @average_review = @book.reviews.average(:rating).to_i.round(2)
     else
-      @average_review = @book.reviews.average(:rating).round(2)
+      @average_review = 0
     end
 
     ap 'rating'
