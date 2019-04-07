@@ -45,6 +45,7 @@
               <% Category.all.each do |category| %>
                 <%= link_to category.name, books_path(category: category.name), class: params[:category] == category.name ? "dropdown-item active" : "dropdown-item" %>
               <% end %>
+                <%= link_to "Add category", new_category_path, class: "dropdown-item" %>
 
             </div>
           </li>
