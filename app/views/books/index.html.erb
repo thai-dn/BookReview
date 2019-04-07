@@ -9,5 +9,6 @@
     <%= render 'book_list' %>
   </div>
 <% end %>
-
-<%= link_to "Add book", new_book_path, class: "btn btn-custom" %>
+<% if user_signed_in? %>
+	<%= link_to "Add book", new_book_path, class: "btn btn-custom" %>
+<% end %>
