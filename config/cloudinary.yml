@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: rails-instagram
+  api_key: '276224326612331'
+  api_secret: p9OcdYTPKci5Fxue8LsQv2WZsTQ
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: rails-instagram
+  api_key: '276224326612331'
+  api_secret: p9OcdYTPKci5Fxue8LsQv2WZsTQ
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: rails-instagram
+  api_key: '276224326612331'
+  api_secret: p9OcdYTPKci5Fxue8LsQv2WZsTQ
+  enhance_image_tag: true
+  static_file_support: false

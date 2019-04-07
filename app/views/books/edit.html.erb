@@ -4,7 +4,7 @@
     <h1>Edit book</h1>
     <%= simple_form_for @book, html: { multipart: true } do |f| %>
       <%= f.select :category_id, @category %>
-      <%= f.file_field :book_img %>
+      <%= f.file_field :avatar %>
       <%= f.input :title, label: "Book Title" %>
       <%= f.input :description %>
       <%= f.input :author %>

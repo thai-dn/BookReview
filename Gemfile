@@ -19,6 +19,8 @@ gem "paperclip", "~> 6.0.0"
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem "cocoon"
 gem 'pg'
+gem 'carrierwave'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -1,6 +1,6 @@
 <h1 class="current-category"> <%= params[:category] %> </h1>
 
-<% unless @books.any? %>
+<% unless @books.present? %>
 <h1>
   There are no books currently in this category
 </h1>
@@ -10,4 +10,4 @@
   </div>
 <% end %>
 
-<%= link_to "Add book", new_book_path %>
+<%= link_to "Add book", new_book_path, class: "btn btn-custom" %>

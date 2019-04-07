@@ -8,7 +8,7 @@ development:
   host: localhost
   user: postgres
   password: postgres
-  database: test_development
+  database: book_development
 
 production:
   <<: *default
