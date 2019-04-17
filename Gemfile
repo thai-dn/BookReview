@@ -27,11 +27,11 @@ gem 'active_model_serializers', '~> 0.10.9'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capistrano-rvm',     require: false
-  gem 'capistrano-yarn',    require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-sidekiq'
+  gem 'capistrano-rvm',       require: false
+  gem 'capistrano-yarn',      require: false
+  gem 'capistrano-rails',     require: false
+  gem 'capistrano-bundler',   require: false
+  gem 'capistrano3-puma',     github: "seuros/capistrano-puma"
   gem 'capistrano-passenger', git: 'https://github.com/capistrano/passenger.git', branch: 'master'
 end
 
