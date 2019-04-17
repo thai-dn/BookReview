@@ -4,8 +4,8 @@ set :branch,    :master
 
 server '34.92.44.112 ', port: '22', roles: [:web, :app, :db], primary: true
 
-set :application,     "book-review"
-set :repo_url,        "git@github.com:thai-itplus/BookReview.git"
+set :application,     "book_review"
+set :repo_url,        "git@github.com:thai-dn/BookReview.git"
 set :user,            "thaidn"
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
@@ -32,7 +32,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 # set :keep_releases, 5
 
 ## Linked Files & Directories (Default None):
-set :linked_files, %w{master.key config/database.yml}
+set :linked_files, %w{config/master.key config/database.yml}
 set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 namespace :puma do
