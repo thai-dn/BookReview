@@ -15,6 +15,14 @@
       <div class="container">
         <div class="navbar-header">
             <%= link_to "Book Review", root_path, class: "navbar-brand" %>
+            
+          <% unless current_user %> 
+            <%= link_to "Facebook Login", '/auth/facebook', class: "navbar-brand" %>
+          <% else %>
+            <%= current_user[:name] %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <% end %>
+            
         </div>
         
         <ul class="nav navbar-nav">
