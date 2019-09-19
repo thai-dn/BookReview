@@ -25,9 +25,6 @@ class BooksController < ApplicationController
     else
       @average_review = 0
     end
-
-    ap 'rating'
-    ap @average_review
   end
 
   def new
@@ -39,7 +36,7 @@ class BooksController < ApplicationController
     @book = current_user.books.build(book_params)
     @book.category_id = params[:category_id]
 
-    if @book.save
+    if @book.save!
       redirect_to root_path
     else
       render 'new'
@@ -59,9 +56,8 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    if @book.destroy
+    if @book.destroy!
       redirect_to root_path
-    else
     end
   end
 
@@ -72,8 +68,7 @@ class BooksController < ApplicationController
   end
 
   def find_book
-    # params.require(:book).permit(:id)
-    @book = Book.find(params['id'])
+    @book = Book.find_by(id: params['id'])
   end
 
   def set_book_category

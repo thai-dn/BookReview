@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
       @review = Review.new(review_params)
       @review.book_id = @book.id
       @review.user_id = current_user.id
-      if @review.save
+      if @review.save!
         redirect_to book_path(@book)
       else
         render 'new'
@@ -24,20 +24,18 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.find(params[:id])
+    @review = Review.find_by(id: params[:id])
     if @review.update(review_params)
       redirect_to book_path(@book)
     else
       render 'edit'
     end
-    
   end
 
   def destroy
     @review.destroy
     redirect_to book_path(@book)
   end
-
 
   private
 
@@ -46,12 +44,11 @@ class ReviewsController < ApplicationController
   end
 
   def find_book
-    @book = Book.find(params[:book_id])
+    @book = Book.find_by(book_id: params[:book_id])
   end
 
   def find_review
-    @review = Review.find(params[:id])
-    
+    @review = Review.find_by(id: params[:id])
   end
 
 end

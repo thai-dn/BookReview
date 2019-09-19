@@ -34,6 +34,7 @@ group :development, :test do
   gem 'capistrano-bundler',   require: false
   gem 'capistrano3-puma',     github: "seuros/capistrano-puma"
   gem 'capistrano-passenger', git: 'https://github.com/capistrano/passenger.git', branch: 'master'
+  gem 'awesome_print'
 end
 
 group :development do
@@ -50,5 +51,3 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-# gem 'mysql2'
-gem 'awesome_print'
