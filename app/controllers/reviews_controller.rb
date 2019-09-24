@@ -1,27 +1,25 @@
 class ReviewsController < ApplicationController
   before_action :find_book
-  before_action :find_review, only: [:edit, :update, :destroy]
+  before_action :find_review, only: %i[edit update destroy]
 
   def new
     @review = Review.new
   end
 
-  def show   
-  end
+  def show; end
 
   def create
-      @review = Review.new(review_params)
-      @review.book_id = @book.id
-      @review.user_id = current_user.id
-      if @review.save!
-        redirect_to book_path(@book)
-      else
-        render 'new'
-      end
+    @review = Review.new(review_params)
+    @review.book_id = @book.id
+    @review.user_id = current_user.id
+    if @review.save!
+      redirect_to book_path(@book)
+    else
+      render 'new'
+    end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @review = Review.find_by(id: params[:id])
@@ -40,7 +38,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :comment)    
+    params.require(:review).permit(:rating, :comment)
   end
 
   def find_book
@@ -50,5 +48,4 @@ class ReviewsController < ApplicationController
   def find_review
     @review = Review.find_by(id: params[:id])
   end
-
 end

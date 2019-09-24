@@ -6,10 +6,21 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @category = Category.find_by(id: params['id'])
   end
 
   def new
     @category = Category.new
+  end
+
+  def update
+    @category = Category.find_by(id: params['id'])
+    if @category.update(category_params)
+      redirect_to root_path
+      return
+    end
+
+    render 'show'
   end
 
   def create

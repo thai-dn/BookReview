@@ -12,6 +12,10 @@ class BooksController < ApplicationController
   end
 
   def index
+    if params[:category].present?
+      @category = Category.find_by(name: params[:category])
+    end
+
     if @category.nil?
       @books = Book.all.order(created_at: :desc)
     else

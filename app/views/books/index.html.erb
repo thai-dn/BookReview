@@ -1,4 +1,8 @@
-<h1 class="current-category"> <%= params[:category] %> </h1>
+<h1 class="current-category">
+  <% if @category.present? %>
+    <%= link_to @category.name, category_path(@category) %>
+  <% end %>
+</h1>
 
 <% unless @books.present? %>
 <h1>
@@ -10,9 +14,8 @@
   </div>
 <% end %>
 
-	<% if user_signed_in? %>
-		<div>
-			<%= link_to "Add book", new_book_path, class: "btn btn-custom" %>		
-		</div>
-	<% end %>	
-
+  <% if user_signed_in? %>
+    <div>
+      <%= link_to "Add book", new_book_path, class: "btn btn-custom" %>		
+    </div>
+  <% end %>
