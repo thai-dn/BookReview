@@ -4,18 +4,16 @@
   <% end %>
 </h1>
 
-<% unless @books.present? %>
-<h1>
-  There are no books currently in this category
-</h1>
-<% else %>
+<% if @books.present? %>
   <div class="row book_list">
     <%= render 'book_list' %>
   </div>
+<% else %>
+  <h1> There are no books currently in this category </h1>
 <% end %>
 
-  <% if user_signed_in? %>
-    <div>
-      <%= link_to "Add book", new_book_path, class: "btn btn-custom" %>		
-    </div>
-  <% end %>
+<% if user_signed_in? %>
+  <div>
+    <%= link_to "Add book", new_book_path, class: "btn btn-custom" %>		
+  </div>
+<% end %>

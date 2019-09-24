@@ -16,20 +16,21 @@
 </div>
 
 <div class="row">
-  <% if  @book.reviews.present? %>
   <div class="col-md-4">
-    <div class="reviews">
-      <!-- review -->
-      <%= render @book.reviews, :locals => {review: @book.reviews} %>
-     <div>
-      <% if user_signed_in? %>
-       <%= link_to "Add review", new_book_review_path(@book) %>
-        <% end %>
-     </div>
+    <% if  @book && @book.reviews.present? %>
+      <div class="reviews">
+        <!-- review -->
+        <%= render @book.reviews, :locals => {review: @book.reviews} %>
+      </div>
+    <% end %>
+    <div>
+    <% if user_signed_in? %>
+     <%= link_to "Add review", new_book_review_path(@book), class: "btn" %>
+    <% end %>
     </div>
   </div>
-  <% end %>
 </div>
+
 
 <div class="links btn-group">
   <%= link_to "Back", root_path, class: "btn btn-custom" %>
