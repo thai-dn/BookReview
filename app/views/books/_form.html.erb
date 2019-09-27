@@ -3,7 +3,7 @@
   <%= f.file_field :avatar %>
   <%= f.input :title, label: "Book title" %>
   <%= f.input :author %>
-  <%= f.input :description %>
+  <%= f.cktext_area :description, :class => 'ckeditor' %>
 
   <h3>Tags</h3>
   <div id='tags'>
