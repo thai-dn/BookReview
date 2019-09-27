@@ -22,6 +22,7 @@ gem 'pg'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'omniauth-facebook'
+gem 'omniauth-heroku'
 gem 'koala'
 gem 'active_model_serializers', '~> 0.10.9'
 
