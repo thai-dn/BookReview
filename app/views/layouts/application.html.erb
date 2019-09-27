@@ -15,31 +15,33 @@
       <div class="container">
         <div class="navbar-header">
             <%= link_to "Book Review", root_path, class: "navbar-brand" %>
-            
-          <% unless current_user %> 
-            <%= link_to "Facebook Login", '/auth/facebook', class: "navbar-brand" %>
-          <% else %>
-            <%= current_user[:name] %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-          <% end %>
-            
         </div>
         
         <ul class="nav navbar-nav">
-          <li>
-            <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item"%>
-          </li>
-        </ul>          
-
+          <% if user_signed_in? %>
+          <li></li>
+          <% else %>
+            <li> <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %> </li>
+          <% end %>
+        </ul>
 
         <ul class="nav navbar-nav">
           <li>
             <% if user_signed_in? %>
-              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item"%></li>
-            <% else %>
-              <%= link_to "Login", user_session_path, class: "dropdown-item"%>
-            <% end %>
+              <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
           </li>
+            <% else %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                LOGIN
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "Login", user_session_path, class: "dropdown-item" %>
+                <%= link_to 'Google', '/auth/google', class: "dropdown-item" %>
+                <%= link_to 'Facebook', '/auth/facebook', class: "dropdown-item" %>
+            </li>
+            <% end %>
         </ul>
 
         <ul class="nav navbar-nav">
@@ -58,9 +60,11 @@
               <% end %>
             </div>
           </li>
+        </ul>
 
+        <ul class="nav navbar-nav">
           <% if user_signed_in? %>
-            <li class="nav-item dropdown">
+            <li class="dropdown-item">
               <%= link_to "Add book", new_book_path , class: "dropdown-item"%>
             </li>
           <% end %>
