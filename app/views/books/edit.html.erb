@@ -6,7 +6,8 @@
       <%= f.select :category_id, @category %>
       <%= f.file_field :avatar %>
       <%= f.input :title, label: "Book Title" %>
-      <%= f.input :description %>
+      <%= f.cktext_area :description, :class => 'ckeditor' %>
+
       <%= f.input :author %>
       <%= f.button :submit, class: "btn-custom2" %>
     <% end %>

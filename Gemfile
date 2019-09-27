@@ -25,6 +25,9 @@ gem 'omniauth-facebook'
 gem 'koala'
 gem 'active_model_serializers', '~> 0.10.9'
 
+gem 'mini_magick'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 

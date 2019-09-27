@@ -20,6 +20,13 @@ GIT
       capistrano (~> 3.0)
 
 GIT
+  remote: https://github.com/galetahub/ckeditor.git
+  revision: ab55dff215999c6efbb9190459bc84ab2514ea1c
+  specs:
+    ckeditor (5.0.0)
+      orm_adapter (~> 0.5.0)
+
+GIT
   remote: https://github.com/seuros/capistrano-puma.git
   revision: 3e6af4fd460b226216dd85e73de7c4fe4d66c143
   specs:
@@ -195,6 +202,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.0331)
     mimemagic (0.3.3)
+    mini_magick (4.9.5)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -353,6 +361,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   chromedriver-helper
+  ckeditor!
   cloudinary
   cocoon
   coffee-rails (~> 4.2)
@@ -361,6 +370,7 @@ DEPENDENCIES
   jquery-rails
   koala
   listen (>= 3.0.5, < 3.2)
+  mini_magick
   omniauth-facebook
   paperclip (~> 6.0.0)
   pg
@@ -381,4 +391,4 @@ RUBY VERSION
    ruby 2.6.1p33
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
