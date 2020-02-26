@@ -1,5 +1,6 @@
 <%= simple_form_for @book, html: { multipart: true } do |f| %>
   <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select category") %>
+  <%= f.hidden_field :avatar_cache %>
   <%= f.file_field :avatar %>
   <%= f.input :title, label: "Book title" %>
   <%= f.input :author %>

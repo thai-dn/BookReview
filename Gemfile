@@ -13,18 +13,18 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'simple_form', '~> 4.1'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem "paperclip", "~> 6.0.0"
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem "cocoon"
 gem 'pg'
-gem 'carrierwave'
-gem 'cloudinary'
+gem 'carrierwave', '~> 1.3.1'
+gem 'cloudinary', '~> 1.13', '>= 1.13.2'
 gem 'omniauth-facebook'
 gem 'omniauth-heroku'
 gem 'koala'
 gem 'active_model_serializers', '~> 0.10.9'
+gem 'dotenv', '~> 2.4'
 
 gem 'mini_magick'
 gem 'ckeditor', github: 'galetahub/ckeditor'

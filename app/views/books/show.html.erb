@@ -1,7 +1,31 @@
 <div class="row">
   <div class="col-md-4">
     <%= image_tag (@book.avatar_url), class: "book-show", title: @book.title, alt: @book.title %>    
+    <% if  @book && @book.reviews.present? %>
+      <div class="reviews">
+        <!-- review -->
+        <%= render @book.reviews, :locals => {review: @book.reviews} %>
+      </div>
+    <% end %>
+    <div>
+    <% if user_signed_in? %>
+     <%= link_to "Add review", new_book_review_path(@book), class: "btn" %>
+    <% end %>
+    </div>
+
+    <div class="links btn-group">
+      <%= link_to "Back", root_path, class: "btn btn-custom" %>
+      <% if  user_signed_in? %>
+        <% if @book.user_id == current_user.id %>
+
+          <%= link_to "Edit", edit_book_path(@book), class: "btn btn-custom" %>
+          <%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
+
   <div class="col-md-8">
     <div class="book-info">
       <h2 class="book-title"><%= @book.title %></h2>
@@ -14,36 +38,6 @@
     </div>
   </div>
 </div>
-
-<div class="row">
-  <div class="col-md-4">
-    <% if  @book && @book.reviews.present? %>
-      <div class="reviews">
-        <!-- review -->
-        <%= render @book.reviews, :locals => {review: @book.reviews} %>
-      </div>
-    <% end %>
-    <div>
-    <% if user_signed_in? %>
-     <%= link_to "Add review", new_book_review_path(@book), class: "btn" %>
-    <% end %>
-    </div>
-  </div>
-</div>
-
-
-<div class="links btn-group">
-  <%= link_to "Back", root_path, class: "btn btn-custom" %>
-  <% if  user_signed_in? %>
-    <% if @book.user_id == current_user.id %>
-
-      <%= link_to "Edit", edit_book_path(@book), class: "btn btn-custom" %>
-      <%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
-    <% end %>
-  <% end %>
-</div>
-
-
 
 <script>
   $('.review-rating').raty({
