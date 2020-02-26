@@ -18,12 +18,13 @@ gem "paperclip", "~> 6.0.0"
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem "cocoon"
 gem 'pg'
-gem 'carrierwave'
-gem 'cloudinary'
+gem 'carrierwave', '~> 1.3.1'
+gem 'cloudinary', '~> 1.13', '>= 1.13.2'
 gem 'omniauth-facebook'
 gem 'omniauth-heroku'
 gem 'koala'
 gem 'active_model_serializers', '~> 0.10.9'
+gem 'dotenv', '~> 2.4'
 
 gem 'mini_magick'
 gem 'ckeditor', github: 'galetahub/ckeditor'
