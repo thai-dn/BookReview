@@ -21,4 +21,9 @@ Things you may want to cover:
 
 * Deployment instructions
 
+
+rake db:migrate RAILS_ENV=production
+rake assets:clobber RAILS_ENV=production
+rake assets:precompile RAILS_ENV=production
+
 * ...
