@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  before_action :authenticate_user!, except: %w[index show]
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
   # GET /tags
