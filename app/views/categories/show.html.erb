@@ -1,2 +1,11 @@
-<h1>Update Category</h1>
-<%= render "category_form" %>
+<div class="book-box">
+  <h1>Category: <%= @category.name %></h1>
+
+  <% if @category && @books.present? %>
+    <div class="row">
+      <%= render :partial => 'books/book_list' %>
+    </div>
+  <% else %>
+    <h1> There are no books currently in this category </h1>
+  <% end %>
+</div>

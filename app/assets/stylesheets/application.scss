@@ -128,6 +128,10 @@ p.alert, p.notice {
 
 /* Book styles */
 
+.book-box {
+  margin-top: 5%;
+}
+
 .book {
   height: 350px;
   width: 250px;
@@ -178,6 +182,9 @@ p.alert, p.notice {
 
 }
 
+.book-list, .book-info {
+  margin-bottom: 50px;
+}
 
 /* current-category styles */
 
@@ -214,7 +221,7 @@ p.alert, p.notice {
   .new-review {
     padding-top: 8px;
   }
-
+  margin-right: 7%;
 }
 
 /* New Book Form styles */

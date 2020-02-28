@@ -7,6 +7,10 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by(id: params['id'])
+
+    redirect_to root_path unless @category
+
+    @books = Book.where(category_id: @category.id).order(created_at: :desc)
   end
 
   def new

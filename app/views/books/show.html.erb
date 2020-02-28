@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row book-box">
   <div class="col-md-4">
     <%= image_tag (@book.avatar_url || default_url), class: "book-show", title: @book.title, alt: @book.title, lazy: true %> 
     <% if  @book && @book.reviews.present? %>
@@ -28,9 +28,21 @@
 
   <div class="col-md-8">
     <div class="book-info">
-      <h2 class="book-title"><%= @book.title %></h2>
+      <div>
+      <div class="book-title">
+        <%= @book.title %>
+      </div>
+      <div>
+        in
+        <%=
+          link_to(category_path(@book.category.id)) do
+            @book.category.name
+          end
+         %>
+        </div>
+      </div>
+
       <h3 class="book-author"> <span>From</span>  <%= @book.author %></h3>
-      <!-- <h4>Category: <%= @book.category.name %> </h4> -->
       <h2 class="avg-rating"> Average Rating </h2>
       <div class="average-review-rating" data-score=<%= @average_review %>></div>
       <span class="number-of-reviews"> Based on <%= @book.reviews.count%> Reviews </span>
