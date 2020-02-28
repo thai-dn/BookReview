@@ -39,8 +39,9 @@
 
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <%= link_to "Login", user_session_path, class: "dropdown-item" %>
-                <%= link_to 'Google', '/auth/google', class: "dropdown-item" %>
-                <%= link_to 'Facebook', '/auth/facebook', class: "dropdown-item" %>
+
+                <%= link_to 'Google', user_google_oauth2_omniauth_authorize_path, class: 'dropdown-item' %>
+                <%= link_to 'Facebook', user_facebook_omniauth_authorize_path, class: 'dropdown-item' %>
             </li>
             <% end %>
         </ul>

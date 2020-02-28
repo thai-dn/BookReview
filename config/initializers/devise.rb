@@ -15,5 +15,11 @@ Devise.setup do |config|
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
 
+  require 'omniauth-google-oauth2'
+  config.omniauth :google_oauth2, ENV['GOOGLE_APP_ID'], ENV['GOOGLE_APP_SECRET'], { access_type: 'online', approval_prompt: '', skip_jwt: true, callback_url: "http://localhost:8080/users/auth/google_oauth2/callback" }
+
+  require 'omniauth-facebook'
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
+
   # config.omniauth :facebook, "276224326612331", "p9OcdYTPKci5Fxue8LsQv2WZsTQ", callback_url: "http://localhost:3000/users/auth/facebook/callback"
 end

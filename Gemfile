@@ -21,7 +21,9 @@ gem 'pg'
 gem 'carrierwave', '~> 1.3.1'
 gem 'cloudinary', '~> 1.13', '>= 1.13.2'
 gem 'lazyload-rails', '~> 0.5.0'
-gem 'omniauth-facebook'
+gem 'omniauth', '~> 1.7', '>= 1.7.1'
+gem 'omniauth-google-oauth2', '~> 0.5.2'
+gem 'omniauth-facebook', '~> 4.0'
 gem 'omniauth-heroku'
 gem 'koala'
 gem 'active_model_serializers', '~> 0.10.9'
@@ -29,6 +31,7 @@ gem 'dotenv', '~> 2.4'
 
 gem 'mini_magick'
 gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'awesome_print'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
