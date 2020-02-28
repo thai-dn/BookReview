@@ -9,7 +9,8 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile = []
-Rails.application.config.assets.precompile += %w[application.css application.js ckeditor/config.js]
+
+Rails.application.config.assets.precompile += %w[ckeditor/config.js]
 
 Dir[Rails.root.join("app", "assets", "**", "*.css")].each do |file|
   Rails.application.config.assets.precompile << file
