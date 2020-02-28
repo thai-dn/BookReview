@@ -20,6 +20,7 @@ gem "cocoon"
 gem 'pg'
 gem 'carrierwave', '~> 1.3.1'
 gem 'cloudinary', '~> 1.13', '>= 1.13.2'
+gem 'lazyload-rails', '~> 0.5.0'
 gem 'omniauth-facebook'
 gem 'omniauth-heroku'
 gem 'koala'

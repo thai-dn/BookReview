@@ -1,8 +1,13 @@
 <% @books.each do |book| %>
   <div class="col-md-3">
     <%= link_to book_path(book) do  %>
-      <%= image_tag (book.avatar_url || default_url), class: "book", title: book.title, alt: book.title %>
+      <%= image_tag (book.avatar_url || default_url), class: "book", title: book.title, alt: book.title, lazy: true %>
       <p> <%= book.title[0..30]%> </p>
     <% end %>
   </div>
 <% end  %>
+
+<script type="text/javascript">
+  $("img").lazyload();
+</script>
+

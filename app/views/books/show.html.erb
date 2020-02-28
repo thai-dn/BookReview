@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-4">
-    <%= image_tag (@book.avatar_url || default_url), class: "book-show", title: @book.title, alt: @book.title %>    
+    <%= image_tag (@book.avatar_url || default_url), class: "book-show", title: @book.title, alt: @book.title, lazy: true %> 
     <% if  @book && @book.reviews.present? %>
       <div class="reviews">
         <!-- review -->
@@ -38,6 +38,10 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $("img").lazyload();
+</script>
 
 <script>
   $('.review-rating').raty({
