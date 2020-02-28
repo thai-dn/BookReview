@@ -1,6 +1,0 @@
-<% if @user %>
-  <h1>Facebook login</h1>
-<% else %>
-  <%= image_tag @user['picture']['data']['url'].to_s, lazy: true %>
-  <%= @user['name'] %>
-<% end %>

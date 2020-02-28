@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable
 
   def self.new_with_session(params, session)
     super.tap do |user|
