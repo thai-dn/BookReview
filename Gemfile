@@ -30,7 +30,8 @@ gem 'active_model_serializers', '~> 0.10.9'
 gem 'dotenv', '~> 2.4'
 gem 'mini_magick'
 gem 'ckeditor', github: 'galetahub/ckeditor'
-gem 'rack-cors', :require => 'rack/cors'
+# gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-cors'
 gem 'awesome_print'
 
 group :development, :test do
