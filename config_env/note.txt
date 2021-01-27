@@ -1,0 +1,7 @@
+clear cache
+
+RAILS_ENV=production rake assets:clobber && rake assets:precompile
+rails s -b 0.0.0.0 -e production
+
+RAILS_ENV=development rake assets:clobber && rake assets:precompile
+rails s -b 0.0.0.0
