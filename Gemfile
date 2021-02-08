@@ -18,7 +18,7 @@ gem "paperclip", "~> 6.0.0"
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem "cocoon"
 gem 'pg'
-gem 'carrierwave', '~> 1.3.1'
+gem 'carrierwave', '~> 1.3.2'
 gem 'cloudinary', '~> 1.13', '>= 1.13.2'
 gem 'omniauth-facebook'
 gem 'omniauth-heroku'
